@@ -1,13 +1,16 @@
-import { Controller, Get, Post, Delete, Patch, Body, Param} from '@nestjs/common';
+import { Controller, Get, Post, Delete, Patch, Body, Param, Res, HttpStatus} from '@nestjs/common';
 import { BooksService } from './books.service';
+import { createBookDto } from 'src/books/dto/createBookDto';
+//import { Request } from 'express';
 
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
 
   @Get(':id')
-  getBook(@Param('id') id: string): string {
-    return this.booksService.getBook(+id);
+  getBook(@Param('id') id: string, @Res() res: Response) :string {
+    const _request = this.booksService.getBook(+id);
+    return _request;
   }
 
   @Get('')

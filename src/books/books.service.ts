@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { createBookDto } from 'src/books/dto/createBookDto';
+import { updateBookDto } from 'src/books/dto/updateBookDto';
 
 @Injectable()
 export class BooksService {
+
   getBook(id): string {
     return 'getBook';
   }
