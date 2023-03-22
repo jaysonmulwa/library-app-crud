@@ -15,10 +15,39 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/book (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/book')
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/books (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/books')
+      .expect(200)
+      .expect('Hello World!');
+  });
+
+  it('/book (POST)', () => {
+    return request(app.getHttpServer())
+      .get('/book')
+      .expect(200)
+      .expect('Hello World!');
+  });
+
+  it('/books (PUT)', () => {
+    return request(app.getHttpServer())
+      .get('/books')
+      .expect(200)
+      .expect('Hello World!');
+  });
+
+  it('/bookS (DELETE)', () => {
+    return request(app.getHttpServer())
+      .get('/books')
+      .expect(200)
+      .expect('Hello World!');
+  });
+
 });
